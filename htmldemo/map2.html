@@ -1,0 +1,234 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="map2.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ab4c0aa9a855f96c48af079c429606d4"></script>
+
+</head>
+<header class="header">
+<div class ="header_logo">
+<h1></h1>
+<div class="header_gnb">
+<ul id="header_font">
+
+<li><a href="/myapp/login.do">로그인</a></li> 
+<li><a href="/myapp/join.do"> 회원가입</a></li>
+<li><a href="/myapp/join.do"> My Page</a></li>
+
+</ul>
+</div>
+</div>
+
+</header>
+<body>
+
+
+	<div class="map_wrap">
+		<div id="map"></div>
+			  
+		<!-- 지도타입 컨트롤 div 입니다 -->
+		<div class="custom_typecontrol radius_border">
+			<span id="btnRoadmap" class="selected_btn"
+				onclick="setMapType('roadmap')">지도</span> <span id="btnSkyview"
+				class="btn" onclick="setMapType('skyview')"> 스카이뷰</span>
+		</div>
+	
+		<!-- 지도 확대, 축소 컨트롤 div 입니다 -->
+		<div class="custom_zoomcontrol radius_border">
+			<span onclick="zoomIn()"><img
+				src="http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_plus.png"
+				alt="확대"></span> <span onclick="zoomOut()"><img
+				src="http://i1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png"
+				alt="축소"></span>
+		</div>
+		
+		<div id="menu_wrap" class="bg_white">
+			<div class="option">
+				<form onsubmit="searchPlaces(); return false">
+					<span>지역명:</span> <input type="text" value=" ex) 서울" id="keyword"
+						size="15" />
+					<button type="submit">검색하기</button>
+				</form>
+			</div>
+			<hr />
+			<ul id="placesList"></ul>
+			<div id="pagination"></div>
+			
+		</div>
+		
+	</div>
+	<div class="menu-bar">
+	 <span class="txt1" id="txt2">
+         <span id="txt3">카테고리 추천별</span>
+         이예요! 
+         </span>  
+        <a href="#" class="active"><i class="fa fa-fw fa-home"></i>전체</a>
+        <a href="#"class="active"><i class="fa fa-fw fa-search"></i>공부</a>
+        <a href="#"class="active"><i class="fa fa-fw fa-envelope"></i>수다</a>
+        <a href="#"class="active"><i class="fa fa-fw fa-user"></i>보드</a>    
+        <br>
+        <a href="#" class="activee"><i class="fa fa-fw fa-home"></i>쾌적</a>
+        <a href="#"class="activee"><i class="fa fa-fw fa-search"></i>동물</a>
+        <a href="#"class="activee"><i class="fa fa-fw fa-envelope"></i>과제</a>
+        <a href="#"class="activee"><i class="fa fa-fw fa-user"></i>돼지</a>
+    </div>
+    <div class="center_list">
+        
+<a id = "cafe-list" href="https://place.map.kakao.com/222177283" >
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAxODA0MjlfMTgz%2FMDAxNTI0OTk0OTg4NDMy.4qqqUsIMT79qxiPAHQ2H-zzz0IKvtgC2SLrN6fXL2P4g.c8Zwf9DdJoYV9x5zTda1lN5OWBxpFmmJnIjw4k7UGzwg.PNG.apollonkim%2F2011.png&type=a340" class="item-img" alt="스타벅스">
+    <span class="cafe1">스타 벅스 강남구</span>
+    <div class="review">
+        <span class="star-point">4.55</span>
+        <span class="txt3">(2,220개)</span>
+</div>
+</a>
+<a id = "cafe-list" href="#">
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fcoffee-cup-icon-vector-design-illustration-cup-of-coffee-icon-vector-vector-id1267680111%3Fk%3D20%26m%3D1267680111%26s%3D612x612%26w%3D0%26h%3DtlUQzDXZatzaM2JUwCTBqMEb_SG-C7G4C5-1kqdZv9U%3D&type=a340" class="item-img" alt="스타벅스">
+    <span class="cafe1">스타 벅스 강서구점</span>
+    <div class="review">
+        <span class="star-point">4.85</span>
+        <span class="txt3">(1,220개)</span>
+</div>
+</a>
+<a id = "cafe-list" href="#">
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fcafefiles.naver.net%2Fdata31%2F2008%2F5%2F23%2F284%2F%25BB%25E7%25C4%25AB%25B8%25AE%25BE%25C6_%25B7%25CE%25B1%25D7_designpooky.jpg&type=l340_165" class="item-img" alt="스타벅스">
+    <span class="cafe1">스타 벅스 광진구점</span>
+    <div class="review">
+        <span class="star-point">5.0</span>
+        <span class="txt3">(220개)</span>
+</div>
+</a>
+<a id = "cafe-list" href="#">
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fcoffee-icon-set-isolated-coffee-beans-on-white-background-vector-id654981222%3Fk%3D20%26m%3D654981222%26s%3D170667a%26w%3D0%26h%3DBv4gsqDCtaOMQAxd4vDaGrPpNO1me20Wyv-JhFkPy1U%3D&type=a340" class="item-img" alt="스타벅스">
+    <span class="cafe1">스타 벅스 신논현역점</span>
+    <div class="review">
+        <span class="star-point">2.2</span>
+        <span class="txt3">(1,830개)</span>
+</div>
+</a>
+<a id = "cafe-list" href="#">
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2F736x%2Fa0%2F04%2F32%2Fa00432a9d6e19be20e0fa5c7f87a3af5.jpg&type=a340" class="item-img" alt="스타벅스">
+    <span class="cafe1">스타 벅스 동대문점</span>
+    <div class="review">
+        <span class="star-point">3.22</span>
+        <span class="txt3">(980개)</span>
+</div>
+</a>
+<a id = "cafe-list" href="#">
+    <img src="https://cdn.pillyze.io/products/v1/0k/f88bd735-6/500" class="item-img" alt="스타벅스">
+    <span class="cafe1">고양이가 많은점</span>
+    <div class="review">
+        <span class="star-point">5.0</span>
+        <span class="txt3">(888개)</span>
+</div>
+</a>
+<a id = "cafe-list" href="#">
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fmedia.istockphoto.com%2Fvectors%2Fcoffee-design-vector-id523353755%3Fs%3D612x612&type=a340" class="item-img" alt="스타벅스">
+    <span class="cafe1">스타 벅스</span>
+    <div class="review">
+        <span class="star-point">4.55</span>
+        <span class="txt3">(2,220개)</span>
+</div>
+</a>
+<a id = "cafe-list" href="#">
+    <img src="https://search.pstatic.net/sunny/?src=https%3A%2F%2Fus.123rf.com%2F450wm%2Fpxlprostudio%2Fpxlprostudio1904%2Fpxlprostudio190400310%2F120280199-awards-icon-on-background-for-graphic-and-web-design-simple-vector-sign-internet-concept-symbol-for-.jpg%3Fver%3D6&type=a340" class="item-img" alt="스타벅스">
+    <span class="cafe1">스타 벅스</span>
+    <div class="review">
+        <span class="star-point">4.55</span>
+        <span class="txt3">(2,220개)</span>
+</div>
+</a>
+
+
+
+    </div>    
+
+
+
+        <input type="checkbox" id="menuicon">
+    <label for="menuicon">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+<div class="sidebar">
+
+    <h5 class="my page"><a href="#">MY Page /</a>
+         <a href="http://127.0.0.1:5500/map2.html">Home</a></h5> 
+    <input type="checkbox" id="answer01">
+    <label for="answer01">우리 카페 등록하기 오픈카톡</label>
+   <br>
+   <br>
+   <br>
+   <br>
+    <input type="checkbox" id="answer02">
+    <label for="answer02">Best Cafe</label>
+    <div class="side-box">
+        <span style="font-size: 30px;
+        font-weight: 900;"> TOP 10 &#9749 </span>
+        <div class="sideinner">
+    <ul>
+        <li>  
+            <h4 calss="cafe-name">
+                <a href="#">스타벅스</a> </h4>
+            
+        </li>
+
+        <li>
+        
+            <h4 calss="cafe-name">
+                <a href="#">빽다방</a> </h4>
+        </li>
+    
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">아트커피</a> </h4>
+        </li>
+    
+    
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">이상한 카페</a> </h4>
+        </li>
+    
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">아름다운 카페</a> </h4>
+        </li>
+    
+        <li>
+           
+            <h4 calss="cafe-name">
+                <a href="#">못생긴 카페</a> </h4>
+        </li>
+    
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">고양이 카페</a> </h4>
+        </li>
+   
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">강아지 카페</a> </h4>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+        
+	
+	<script src="resources/map.js"></script>
+</body>
+</html>

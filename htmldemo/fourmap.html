@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link rel="stylesheet" href="fourmap.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+<header class="header">
+<div class ="header_logo">
+<h1></h1>
+<div class="header_gnb">
+<ul id="header_font">
+
+<li><a href="/myapp/login.do">로그인</a></li> 
+<li><a href="/myapp/join.do"> 회원가입</a></li>
+<li><a href="/myapp/join.do"> My Page</a></li>
+</ul>
+</div>
+</div>
+
+</header>
+<body>
+    <div class="container" id="one"> <!-- 중반부 전체를 감싸는 div 태그-->
+            
+        <div class="first"> <!--중반부 를 두개의 div태그로 나누어 왼쪽 절반의 구역으로 나눠줌-->
+            <p class="coldbrew">커피빈 신논현역점</p>
+            <img src="https://pup-review-phinf.pstatic.net/MjAyMjEyMTJfMjQ0/MDAxNjcwODM2MjAyNzA2.K08lXysMFu41SzHfCT4A3WWMw3-6gHeUIOY5AU7ICWEg.z6sKpApg5VNRRX5juKi_j193ZuoauZku8S6GlTip1DMg.JPEG/20221210_134027.jpg" alt="커피빈">
+        </div>
+
+        <div class="second"> <!--중반부 를 두개의 div태그로 나누어 오른쪾 절반의 구역으로 나눠줌-->
+                <br>
+              
+
+                <div id="fifth">
+                    <div class="emojiright">
+                        <p class="coffeename">coffee bean</p>
+                        <p class="coffeename2">신논현역점</p>
+                    </div>
+                    <div id="heart2">
+                        <a href="#"><i class="far fa-heart" id="heart3"></i></a>
+                    </div>
+                </div>
+
+                <p class="seconddetail">아주아주 조용하고 과제하기좋고 아메리카노도 맛있음</p>
+
+                <div class="productdetail">
+                    <span>Menu</span>
+                    <span>상세정보</span>
+                </div>
+
+                <div class="productdetail2"> <!--영양정보를 담아주는 div 태그-->
+                    <div class="boxone"> <!--영양 정보를 좌우로 반반 나눠주었으며, 왼쪽에 해당하는 div 태그-->
+                        <ul>
+                            <li>
+                                <span class="l">아메리카노</span>
+                                <span>3800</span class="r">
+                            </li>
+                            <li>
+                                <span class="l">바닐라라떼</span>
+                                <span>4500</span class="r">
+                            </li>
+                            <li>
+                                <span class="l">민트초코</span>
+                                <span>6000</span class="r">
+                            </li>
+                            <li>
+                                <span class="l">아이스초코</span>
+                                <span>5500</span class="r">
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="boxtwo"> <!--영양 정보를 좌우로 반반 나눠주었으며, 오른쪽에 해당하는 div 태그-->
+                        <ul>
+                        <ul>
+                            <li>
+                                <span class="l">주소</span>
+                                <span>1377-12 1층</span class="r">
+                            </li>
+                            <li>
+                                <span class="l">전화번호</span>
+                                <span>02-222-2222</span class="r">
+                            </li>
+                            <li>
+                                <span class="l">주차여부</span>
+                                <span>쌉가능</span class="r">
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="allegy">매주 일요일 휴무</div>
+
+                <p class="reviewnav">리뷰</p>
+
+                <div class="Allcomment"> <!--모든 댓글 내용을 담아내는 div 태그-->
+                    <div class="comment"> <!-- comment class는 각각 하나의 댓글을 담아냄 -->
+                        <span class="id">coffee_lover</span>
+                        <span class="ment">너무 맛있어요!</span>
+                        <button class="deletebutton">삭제</button>
+                        <a href="#" class="commentheart"><i class="far fa-heart"></i></a>
+                    </div>
+
+                    <div class="comment">
+                        <span class="id">CHOCO7</span>
+                        <span class="ment">오늘도 과제를 하러갑니다</span>
+                        <button class="deletebutton">삭제</button>
+                        <a href="#" class="commentheart"><i class="far fa-heart hearts"></i></a>
+                    </div>
+
+                    <div class="comment">
+                        <span class="id">legend_dev</span>
+                        <span class="ment">진짜 민트초코는 전설이다.
+                           
+                        </span>
+                        <button class="deletebutton">삭제</button>
+                        <a href="#" class="commentheart"><i class="far fa-heart"></i></a>
+                    </div>
+                </div>
+
+                <input text="" placeholder="리뷰를 입력해주세요" class="reviewcomment"
+                        onkeyup="if(window.event.keyCode==13){test()}"> <!--후반부에 구현할 댓글 입력을 위한 input 태그-->
+</section>
+    <input type="checkbox" id="menuicon">
+    <label for="menuicon">
+    <span></span>
+    <span></span>
+    <span></span>
+</label>
+
+<div class="sidebar">
+
+    <h5 class="my page"><a href="#">MY Page /</a>
+         <a href="http://127.0.0.1:5500/map2.html">Home</a></h5> 
+    <input type="checkbox" id="answer01">
+    <label for="answer01">우리 카페 등록하기 오픈카톡</label>
+   <br>
+   <br>
+   <br>
+   <br>
+    <input type="checkbox" id="answer02">
+    <label for="answer02">Best Cafe</label>
+    <div class="side-box">
+        <span style="font-size: 30px;
+        font-weight: 900;"> TOP 10 &#9749 </span>
+        <div class="sideinner">
+    <ul>
+        <li>  
+            <h4 calss="cafe-name">
+                <a href="#">스타벅스</a> </h4>
+            
+        </li>
+
+        <li>
+        
+            <h4 calss="cafe-name">
+                <a href="#">빽다방</a> </h4>
+        </li>
+    
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">아트커피</a> </h4>
+        </li>
+    
+    
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">이상한 카페</a> </h4>
+        </li>
+    
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">아름다운 카페</a> </h4>
+        </li>
+    
+        <li>
+           
+            <h4 calss="cafe-name">
+                <a href="#">못생긴 카페</a> </h4>
+        </li>
+    
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">고양이 카페</a> </h4>
+        </li>
+   
+        <li>
+            
+            <h4 calss="cafe-name">
+                <a href="#">강아지 카페</a> </h4>
+        </li>
+    </ul>
+</div>
+</div>
+</div>
+        
+</body>
+<script src="fourmap.js"></script>
+</html>

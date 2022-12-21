@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+    </head>
+    <style>
+        /*            float
+            1. float 은 박스의 위치를 부모요소의 안에서 왼쪽 또는 오른쪽으로 이동시키니는 기능
+            2. float가 지정된 박스는 문서의 일반적인 흐름에 영향을 받지않으면서 이동된 위치에 떠있다.
+            */
+
+        .wrap {
+            background-color: gray;
+        }
+        div.wrap div {
+            width: 100px;
+            height: 100px;
+        }
+        .box1 {
+            background-color: red;
+            float: left;
+        }
+        .box2 {
+            background-color: green;
+            float: right;
+        }
+        .box3 {
+            background-color: blue;
+            float: left;
+        }
+        div.wrap p {
+            clear: both; /*float 해제*/
+        }
+        img {
+            float: left;
+            margin: 10px;
+        }
+    </style>
+    <body>
+        <div class="wrap">
+            <div class="box1"></div>
+            <div class="box2"></div>
+            <div class="box3"></div>
+            <p>inline</p>
+        </div>
+        <div
+            class="other"
+            style="background-color: yellow; height: 500px"
+        >
+            <img
+                src="images/gosu.jpg"
+                alt="고수 영화배우"
+            />
+            <p>ㅁㄴㅇㄻㄴㄹㄴㅁㄹ</p>
+        </div>
+    </body>
+</html>
