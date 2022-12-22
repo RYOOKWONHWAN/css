@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            //변수 선언전 ==> uncaught referenceerror   -  not defined
+            // console.log(`bar:${bar}`);
+            console.log(`foo:${foo}`);
+            //변수 선언 후 ==>  cannot access bar before initialization
+            var foo;
+            let bar;
+            bar = 1;
+            console.log(`bar:${bar}`);
+        </script>
+    </body>
+</html>
