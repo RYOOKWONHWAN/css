@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            http-equiv="X-UA-Compatible"
+            content="IE=edge"
+        />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            let color = ['red', 'green', 'blue'];
+            for (let element of color) {
+                console.log(element);
+            }
+            let subject = 'script';
+            for (let element in subject) {
+                console.log(element);
+            }
+            console.log('=====================================================');
+            let obj = { a: 1, b: 2, c: 3 };
+            for (let idx in obj) {
+                console.log(idx);
+            }
+            for (let val of obj) {
+                console.log(val);
+            }
+            /*
+            for ~ of 문은 반복 가능한 객체 만 가능하다 (ex array string argument)
+            iterable 속성을 가진 것에만 사용가능
+        </script>
+    </body>
+</html>
