@@ -1,0 +1,307 @@
+@charset "utf-8";
+/* 메인 CSS - main.css */
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    color: #333;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* body *{
+    outline: 2px dashed blue;
+} */
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+li {
+    float: left;
+}
+
+/* 공통 CSS */
+.top {
+}
+.topnav {
+    width: 1200px;
+
+    overflow: hidden;
+    background-color: #333;
+    margin: 0 auto;
+}
+
+.topnav a {
+    width: 150px;
+    height: 100%;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    text-align: center;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.topnav a.active {
+    background-color: #04aa6d;
+    color: white;
+}
+main {
+    width: 1200px;
+    margin: 0 auto;
+}
+footer {
+    width: 1200px;
+    margin: 0 auto;
+}
+main.box {
+    background-color: #04aa6d;
+}
+div.main1 {
+    height: 350px;
+    background-color: rgba(255, 255, 255, 0.991);
+}
+div.main2 {
+    height: 200px;
+}
+footer.box {
+    height: 200px;
+    background-color: rgba(41, 27, 27, 0.612);
+    color: white;
+}
+#company {
+    width: 400px;
+}
+#company ul {
+    font-size: 25px;
+}
+.cminfo {
+    font-size: 15px;
+    
+}
+/* 슬라이드 */
+.slideshow-container {
+    width: 750px;
+    height: 300px;
+    position: relative;
+
+    margin-left: 50px;
+    overflow: hidden;
+    float: left;
+}
+
+/* Caption text */
+.text {
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active {
+    background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+    .text {
+        font-size: 11px;
+    }
+}
+/* tap */
+li {
+    list-style-type: none;
+}
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* pop */
+.tabmenu {
+    width: 450px;
+
+    float: left;
+}
+
+/* 탭메뉴 */
+.tm {
+    width: 200px;
+    height: 40px;
+}
+.tm li a {
+    display: block;
+    width: 100px;
+    text-align: center;
+    line-height: 40px;
+    background-color: rgb(94, 169, 255);
+}
+/* 선택된 탭class */
+.tm li.on a {
+    background-color: #fff;
+}
+/* 탭내용박스 */
+.tc {
+    height: 138px;
+    background-color: #fff;
+}
+/* 탭내용박스 li - 2개 */
+.tc > li {
+    width: 100%;
+    height: 100%;
+    display: none; /* 모두안보임 */
+}
+/* 선택된 탭내용박스 li 클래스 */
+.tc > li.on {
+    display: block;
+}
+
+/* 공지사항 리스트박스 */
+.gong {
+    padding-top: 9px;
+    padding-left: 7px;
+}
+.gong li {
+    float: none;
+    line-height: 24px;
+}
+.gong a {
+    display: inline-block;
+    /* 줄안바뀌면서 width디자인 적용위해 */
+    width: 270px;
+
+    /* 아래 3가지로 한줄짜리 말줄임표시하기 */
+    white-space: nowrap;
+    /* 1.줄바꿈방지 */
+    overflow: hidden;
+    /* 2.넘치는 글자숨기기 */
+    text-overflow: ellipsis;
+    /* 3.텍스트 말줄임표시 */
+}
+
+/* 날짜표시 오른쪽끝으로 */
+.gong span {
+    float: right;
+    padding-right: 5px;
+}
+
+/* 갤러리 리스트박스 */
+.gal li {
+    margin: 18px 12px;
+}
+.gal img {
+    width: 100px;
+    border: 1px solid #777;
+}
+
+/* 팝업창 */
+.pop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    padding: 15px;
+    z-index: 999;
+    background-color: #fff;
+    border: 3px solid #888;
+    display: none; /* 처음에 안보임! */
+}
+.pop h1 {
+    /* 팝업제목 */
+    font-size: 24px;
+    text-align: center;
+}
+.pop p {
+    /* 팝업내용문단 */
+    line-height: 30px;
+}
+/* 닫기버튼박스 */
+.bbx {
+    text-align: right;
+    /* button요소는 inline-block이므로 
+    인라인처럼 텍스트정렬이 적용된다! */
+}
+
+/* search */
+.send {
+    width: 350px;
+    height: 100%;
+    background-color: rgb(249, 249, 249);
+    float: right;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: solid;
+    color: rgb(25, 23, 23);
+    border: 1px solid black;
+}
+#message {
+    background-color: #04aa6d;
+    text-align: center;
+}
+.seo1 {
+    font-size: 20px;
+}
+.event {
+    float: left;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+
+.customer {
+    float: left;
+    width: 300px;
+    margin-left: 50px;
+    margin-top: 30px;
+}

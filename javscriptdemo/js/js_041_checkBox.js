@@ -20,8 +20,18 @@ document.frm.allcheck.onclick = function () {
     // }
     //ES6 Spread operator : NodeList를 Array로 변경
     let myThis = this;
-    let iArray = [...checkgroup];
-    iArray.map(function (element) {
+    // let iArray = [...checkgroup];
+    // iArray.map(function (element) {
+    //     element.checked = myThis.checked;
+    // });
+    // let myArray = Array.from(checkgroup);
+    // console.log(`${myArray}`);
+    // console.log(typeof myArray);
+    // myArray.map(function (element) {
+    //     element.checked = myThis.checked;
+    // });
+    checkgroup.forEach(function (element) {
         element.checked = myThis.checked;
+        console.log(element);
     });
 };
